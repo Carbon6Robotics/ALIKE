@@ -100,9 +100,9 @@ class ALike(ALNet):
                 if n_keypoints < len(score):
                     keypoint = keypoint[:n_keypoints]
                 else:
-                    while len(score) < n_keypoints:
+                    while len(keypoint) < n_keypoints:
                         # pad keypoints
-                        diff = min(n_keypoints - len(score), len(score))
+                        diff = min(n_keypoints - len(keypoint), len(keypoint))
                         keypoint = torch.cat([keypoint, keypoint[:diff]])
 
             result_keypoints.append(keypoint)
